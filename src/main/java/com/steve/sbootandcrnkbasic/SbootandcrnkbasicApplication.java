@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Import(CorsConfig.class)
+
 public class SbootandcrnkbasicApplication {
 
     public static void main(String[] args) {

@@ -14,22 +14,30 @@ repositories {
 }
 dependencyManagement {
     imports {
-        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE'
-        mavenBom "io.crnk:crnk-bom:3.3.20200920055408"
+        //mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE'
+        //mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE'
+        mavenBom "io.crnk:crnk-bom:3.4.20210509072026"
         //mavenBom "io.crnk:crnk-bom:3.4.20210122085723"
     }
 }
 dependencies {
+//------------------SPRING BOOT-------------------------------------------------------
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+//------------------CRNK-------------------------------------------------------
     implementation 'io.crnk:crnk-setup-spring-boot2'
     implementation 'io.crnk:crnk-format-plain-json'
     implementation 'io.crnk:crnk-home'
+    implementation 'io.crnk:crnk-data-jpa'
 
+//------------------HIBERNATE-------------------------------------------------------
+    implementation 'org.hibernate:hibernate-core:5.1.0.Final'
+    implementation 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
+    implementation 'com.h2database:h2:1.4.195'
 
-
+//------------------TESTS-------------------------------------------------------
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation "org.junit.jupiter:junit-jupiter-params:5.8.1"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.8.1"
